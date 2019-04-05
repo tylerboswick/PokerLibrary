@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Poker.Data
 {
@@ -8,7 +9,7 @@ namespace Poker.Data
         
         public Hand()
         {
-            Cards = new Card[]
+            Cards = new[]
             {
                 new Card(),
                 new Card(),
@@ -19,7 +20,7 @@ namespace Poker.Data
         }
         public Hand(Card one, Card two, Card three, Card four, Card five)
         {
-            Cards = new Card[]
+            Cards = new[]
             {
                 one?? new Card(),
                 two?? new Card(),
@@ -35,14 +36,9 @@ namespace Poker.Data
             try
             {
                 var hand = (Hand)obj;
-                foreach(var card in hand.Cards)
+                if (hand.Cards.Any(card => !HandHasCard(card)))
                 {
-                    if (!HandHasCard(card))
-                    {
-                        result = false;
-                        break;
-                    }
-
+                    result = false;
                 }
             }
             catch(Exception)
@@ -54,15 +50,25 @@ namespace Poker.Data
 
         public bool HandHasCard(Card checkCard)
         {
-            var result = false;
-            foreach(var card in Cards)
+            return Cards.Contains(checkCard);
+        }
+
+        public bool IsFlush()
+        {
+            var result = true;
+            try
             {
-                if (card.Equals(checkCard))
+                var suit = Cards.First().CardSuit;
+                if (Cards.Any(card => card.CardSuit != suit))
                 {
-                    result = true;
-                    break;
+                    return false;
                 }
             }
+            catch (Exception)
+            {
+                result = false;
+            }
+
             return result;
         }
     }

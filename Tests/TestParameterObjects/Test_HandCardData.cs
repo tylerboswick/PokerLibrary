@@ -1,26 +1,11 @@
-using Xunit;
-using Poker.Logic;
-using Poker.Data;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Poker.Data;
 
-namespace Tests.Tests
+namespace Tests.TestParameterObjects
 {
-    public class CardLogicTests_GetHighCardFromHand
-    {
-     
-        [Theory]
-        [ClassData(typeof(TestHandCardData))]
-        public void GetHighCardFromHand_HighCardIsReturned_WhenPassingHandWithUniqueCardValues(Hand hand, Card highCard)
-        {
-            var logic = new PokerLogic();
-            var result = logic.GetHighCardFromHand(hand);
-            Assert.True(result.Equals(highCard));
-        }  
-    }
-
     //Test Data Input for CardLogicTests.GetHighCardFromHand_HighCardIsReturned_WhenPassingHandWithUniqueCardValues
-    public class TestHandCardData : IEnumerable<object[]>
+    public class Test_HandCardData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {

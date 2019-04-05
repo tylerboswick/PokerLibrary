@@ -1,14 +1,11 @@
-﻿using Poker.Data;
+﻿using System.Linq;
+using Poker.Data;
 using Poker.Interfaces;
 
 namespace Poker.Logic
 {
     public class PokerLogic : IPokerLogic
     {
-        public PokerLogic()
-        {
-
-        }
         public Card GetHighCard(Card firstCard, Card secondCard)
         {
             return firstCard.CardValue > secondCard.CardValue ? firstCard : secondCard;          
@@ -17,11 +14,7 @@ namespace Poker.Logic
         public Card GetHighCardFromHand(Hand hand)
         {
             var highest = new Card();
-            foreach(var card in hand.Cards)
-            {
-                highest = GetHighCard(highest, card);
-            }
-            return highest;
+            return hand.Cards.Aggregate(highest, GetHighCard);
         }
         
         public Hand GetHighHand(Hand firstHand, Hand secondHand)
@@ -30,14 +23,7 @@ namespace Poker.Logic
             var secondHandHigh = GetHighCardFromHand(secondHand);
             var highCard = GetHighCard(firstHandHigh, secondHandHigh);
 
-            if (highCard.Equals(firstHandHigh))
-            {
-                return firstHand;
-            }
-            else
-            {
-                return secondHand;
-            }
+            return highCard.Equals(firstHandHigh) ? firstHand : secondHand;
         }
     }
 }

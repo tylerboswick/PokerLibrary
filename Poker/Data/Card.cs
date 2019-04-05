@@ -20,7 +20,7 @@ namespace Poker.Data
 
         public override bool Equals(object c)
         {
-            var result = true;
+            bool result;
             try
             {
                 result = CardValue == ((Card)c).CardValue && CardSuit == ((Card)c).CardSuit;
