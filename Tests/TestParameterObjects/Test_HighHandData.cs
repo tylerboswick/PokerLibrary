@@ -4,7 +4,7 @@ using Poker.Data;
 
 namespace Tests.TestParameterObjects
 {
-    public class Test_HandHandData : IEnumerable<object[]>
+    public class Test_HighHandData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {

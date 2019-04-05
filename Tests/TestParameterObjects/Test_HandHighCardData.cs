@@ -5,7 +5,7 @@ using Poker.Data;
 namespace Tests.TestParameterObjects
 {
     //Test Data Input for CardLogicTests.GetHighCardFromHand_HighCardIsReturned_WhenPassingHandWithUniqueCardValues
-    public class Test_HandCardData : IEnumerable<object[]>
+    public class Test_HandHighCardData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {

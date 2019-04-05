@@ -18,6 +18,22 @@ namespace Tests.Tests
         public void HandIsFlush_ReturnsExpected(Hand hand, bool expectedResult)
         {
             Assert.True(hand.IsFlush().Equals(expectedResult));
-        }   
+        }
+
+        [Theory]
+        [ClassData(typeof(Test_HandHighCardData))]
+        public void GetHighCardFromHand_HighCardIsReturned_WhenPassingHandWithUniqueCardValues(Hand hand, Card highCard)
+        {
+            Assert.True(hand.GetHighCardFromHand().Equals(highCard));
+        }
+
+        [Theory]
+        [ClassData(typeof(Test_HandMultipleValueData))]
+        public void GetValuableDuplicateCardsByValue_HighMultipleValueIsReturned_FromHand(Hand hand, int typeOfMultiple, Value expectedValue)
+        {
+            Assert.True(hand.GetValuableDuplicateCardsByValue(typeOfMultiple).Equals(expectedValue));
+        }
+
+
     }
 }
