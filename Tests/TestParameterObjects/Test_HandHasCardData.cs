@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Poker.Data;
+using Poker.Enums;
 
 namespace Tests.TestParameterObjects
 {
@@ -14,86 +15,86 @@ namespace Tests.TestParameterObjects
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Hearts, Value.Eight),
-                    new Card(Suit.Spades, Value.Jack)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Eight),
+                    new Card(Suit.Spades, CardValue.Jack)
                 ),
-                new Card(Suit.Spades, Value.Ace), true
+                new Card(Suit.Spades, CardValue.Ace), true
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Hearts, Value.Eight),
-                    new Card(Suit.Spades, Value.Jack)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Eight),
+                    new Card(Suit.Spades, CardValue.Jack)
                 ),
-                new Card(Suit.Clubs, Value.Ace), true
+                new Card(Suit.Clubs, CardValue.Ace), true
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Hearts, Value.Eight),
-                    new Card(Suit.Spades, Value.Jack)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Eight),
+                    new Card(Suit.Spades, CardValue.Jack)
                 ),
-                new Card(Suit.Hearts, Value.Ace), true
+                new Card(Suit.Hearts, CardValue.Ace), true
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Hearts, Value.Eight),
-                    new Card(Suit.Spades, Value.Jack)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Eight),
+                    new Card(Suit.Spades, CardValue.Jack)
                 ),
-                new Card(Suit.Hearts, Value.Eight), true
+                new Card(Suit.Hearts, CardValue.Eight), true
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Hearts, Value.Eight),
-                    new Card(Suit.Spades, Value.Jack)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Eight),
+                    new Card(Suit.Spades, CardValue.Jack)
                 ),
-                new Card(Suit.Spades, Value.Jack), true
+                new Card(Suit.Spades, CardValue.Jack), true
             };
-            yield return new object[] { new Hand(), new Card(Suit.Spades, Value.Ace), false };
+            yield return new object[] { new Hand(), new Card(Suit.Spades, CardValue.Ace), false };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Clubs, Value.Ace),
-                    new Card(Suit.Hearts, Value.Ace),
-                    new Card(Suit.Diamonds, Value.Ace),
-                    new Card(Suit.Empty, Value.Ace),
-                    new Card(Suit.Diamonds, Value.King)
+                    new Card(Suit.Clubs, CardValue.Ace),
+                    new Card(Suit.Hearts, CardValue.Ace),
+                    new Card(Suit.Diamonds, CardValue.Ace),
+                    new Card(Suit.Empty, CardValue.Ace),
+                    new Card(Suit.Diamonds, CardValue.King)
                 ),
-                new Card(Suit.Spades, Value.Ace), false
+                new Card(Suit.Spades, CardValue.Ace), false
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Two),
-                    new Card(Suit.Spades, Value.Three),
-                    new Card(Suit.Spades, Value.Four),
-                    new Card(Suit.Spades, Value.Five),
-                    new Card(Suit.Spades, Value.Six)
+                    new Card(Suit.Spades, CardValue.Two),
+                    new Card(Suit.Spades, CardValue.Three),
+                    new Card(Suit.Spades, CardValue.Four),
+                    new Card(Suit.Spades, CardValue.Five),
+                    new Card(Suit.Spades, CardValue.Six)
                 ),
-                new Card(Suit.Spades, Value.Ace), false
+                new Card(Suit.Spades, CardValue.Ace), false
             };
         }
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

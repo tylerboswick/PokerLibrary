@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Poker.Data;
+using Poker.Enums;
 using Poker.Helpers;
 using Poker.Interfaces;
 
@@ -19,9 +21,8 @@ namespace Poker.Logic
         {
             PlayerHand winner = null;
 
-
-
             return winner;
         }
+     
     }
 }

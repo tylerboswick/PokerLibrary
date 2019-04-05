@@ -1,21 +1,22 @@
 ﻿using System;
+using Poker.Enums;
 
 namespace Poker.Data
 {
     public class Card
     {
         public Suit CardSuit { get; set; }
-        public Value CardValue { get; set; }
+        public CardValue CardValue { get; set; }
 
         public Card()
         {
             CardSuit = Suit.Empty;
-            CardValue = Value.Empty;
+            CardValue = CardValue.Empty;
         }
-        public Card(Suit suit, Value value)
+        public Card(Suit suit, CardValue cardValue)
         {
             CardSuit = suit;
-            CardValue = value;
+            CardValue = cardValue;
         }
 
         public override bool Equals(object c)

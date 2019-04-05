@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Poker.Data;
+using Poker.Enums;
 
 namespace Tests.TestParameterObjects
 {
@@ -9,33 +10,33 @@ namespace Tests.TestParameterObjects
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Empty), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Two), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Three), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Four), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Five), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Six), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Seven), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Eight), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Nine), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ten), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Jack), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Queen), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.King), new Card(Suit.Empty, Value.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Empty), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Two), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Three), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Four), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Five), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Six), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Seven), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Eight), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Nine), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ten), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Jack), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Queen), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.King), new Card(Suit.Empty, CardValue.Ace) };
 
-            yield return new object[] { new Card(Suit.Empty, Value.Empty), new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Two),   new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Three), new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Four),  new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Five),  new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Six),   new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Seven), new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Eight), new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Nine),  new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Ten),   new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Jack),  new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.Queen), new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
-            yield return new object[] { new Card(Suit.Empty, Value.King),  new Card(Suit.Empty, Value.Ace), new Card(Suit.Empty, Value.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Empty), new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Two),   new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Three), new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Four),  new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Five),  new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Six),   new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Seven), new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Eight), new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Nine),  new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Ten),   new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Jack),  new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.Queen), new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
+            yield return new object[] { new Card(Suit.Empty, CardValue.King),  new Card(Suit.Empty, CardValue.Ace), new Card(Suit.Empty, CardValue.Ace) };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

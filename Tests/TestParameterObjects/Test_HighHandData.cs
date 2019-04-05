@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Poker.Data;
+using Poker.Enums;
 
 namespace Tests.TestParameterObjects
 {
@@ -12,38 +13,38 @@ namespace Tests.TestParameterObjects
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Ace),
-                    new Card(Suit.Clubs, Value.King),
-                    new Card(Suit.Diamonds, Value.Queen),
-                    new Card(Suit.Diamonds, Value.Two),
-                    new Card(Suit.Hearts, Value.Five)
+                    new Card(Suit.Spades, CardValue.Ace),
+                    new Card(Suit.Clubs, CardValue.King),
+                    new Card(Suit.Diamonds, CardValue.Queen),
+                    new Card(Suit.Diamonds, CardValue.Two),
+                    new Card(Suit.Hearts, CardValue.Five)
                 ),
                 new Hand
                 (
-                    new Card(Suit.Clubs, Value.Two),
-                    new Card(Suit.Spades, Value.Three),
-                    new Card(Suit.Diamonds, Value.Four),
-                    new Card(Suit.Clubs, Value.Ten),
-                    new Card(Suit.Hearts, Value.Ten)
+                    new Card(Suit.Clubs, CardValue.Two),
+                    new Card(Suit.Spades, CardValue.Three),
+                    new Card(Suit.Diamonds, CardValue.Four),
+                    new Card(Suit.Clubs, CardValue.Ten),
+                    new Card(Suit.Hearts, CardValue.Ten)
                 )
             };
             yield return new object[]
             {
                 new Hand
                 (
-                    new Card(Suit.Spades, Value.Three),
-                    new Card(Suit.Diamonds, Value.Five),
-                    new Card(Suit.Clubs, Value.Three),
-                    new Card(Suit.Clubs, Value.Two),
-                    new Card(Suit.Hearts, Value.Two)
+                    new Card(Suit.Spades, CardValue.Three),
+                    new Card(Suit.Diamonds, CardValue.Five),
+                    new Card(Suit.Clubs, CardValue.Three),
+                    new Card(Suit.Clubs, CardValue.Two),
+                    new Card(Suit.Hearts, CardValue.Two)
                 ),
                 new Hand
                 (
-                    new Card(Suit.Empty, Value.Two),
-                    new Card(Suit.Hearts, Value.Three),
-                    new Card(Suit.Diamonds, Value.Two),
-                    new Card(Suit.Diamonds, Value.Three),
-                    new Card(Suit.Diamonds, Value.Four)
+                    new Card(Suit.Empty, CardValue.Two),
+                    new Card(Suit.Hearts, CardValue.Three),
+                    new Card(Suit.Diamonds, CardValue.Two),
+                    new Card(Suit.Diamonds, CardValue.Three),
+                    new Card(Suit.Diamonds, CardValue.Four)
                 )
             };
         }

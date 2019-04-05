@@ -1,4 +1,5 @@
 ﻿using Poker.Data;
+using Poker.Enums;
 using Xunit;
 using Tests.TestParameterObjects;
 
@@ -29,9 +30,9 @@ namespace Tests.Tests
 
         [Theory]
         [ClassData(typeof(Test_HandMultipleValueData))]
-        public void GetValuableDuplicateCardsByValue_HighMultipleValueIsReturned_FromHand(Hand hand, int typeOfMultiple, Value expectedValue)
+        public void GetValuableDuplicateCardsByValue_HighMultipleValueIsReturned_FromHand(Hand hand, int typeOfMultiple, CardValue expectedCardValue)
         {
-            Assert.True(hand.GetValuableDuplicateCardsByValue(typeOfMultiple).Equals(expectedValue));
+            Assert.True(hand.GetValuableDuplicateCardsByValue(typeOfMultiple).Equals(expectedCardValue));
         }
 
 

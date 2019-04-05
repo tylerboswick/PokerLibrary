@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Poker.Enums;
 using Poker.Helpers;
 
 namespace Poker.Data
@@ -56,19 +57,19 @@ namespace Poker.Data
             return Cards.Contains(checkCard);
         }
 
-        public Value IsPair()
+        public CardValue IsPair()
         {
             return GetValuableDuplicateCardsByValue(Pair);
         }
 
-        public Value IsThreeOfAKind()
+        public CardValue IsThreeOfAKind()
         {
             return GetValuableDuplicateCardsByValue(ThreeOfAKind);
         }
 
-        public Value GetValuableDuplicateCardsByValue(int numRequired)
+        public CardValue GetValuableDuplicateCardsByValue(int numRequired)
         {
-            var result = Value.Empty;
+            var result = CardValue.Empty;
             try
             {
                 //group common value cards and only take groups with the desired count (2 for pair, 3 for 3-of-kind)
@@ -87,20 +88,20 @@ namespace Poker.Data
             }
             catch (Exception)
             {
-                result = Value.Empty;
+                result = CardValue.Empty;
             }
             return result;
         }
 
-        public Value IsFlush()
+        public CardValue IsFlush()
         {
-            Value result;
+            CardValue result;
             try
             {
                 var suit = Cards.First().CardSuit;
                 if (Cards.Any(card => card.CardSuit != suit))
                 {
-                    return Value.Empty;
+                    return CardValue.Empty;
                 }
                 else
                 {
@@ -109,7 +110,7 @@ namespace Poker.Data
             }
             catch (Exception)
             {
-                result = Value.Empty;
+                result = CardValue.Empty;
             }
 
             return result;
@@ -118,6 +119,11 @@ namespace Poker.Data
         {
             var highest = new Card();
             return Cards.Aggregate(highest, CardCompareHelpers.GetHighCard);
+        }
+
+        public void OrderHand()
+        {
+            Cards = Cards.OrderByDescending(x => x.CardValue).ToArray();
         }
     }
 }

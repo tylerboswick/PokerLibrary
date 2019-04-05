@@ -1,4 +1,4 @@
-﻿namespace Poker.Data
+﻿namespace Poker.Enums
 {
     public enum Suit
     {

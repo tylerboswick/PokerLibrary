@@ -1,6 +1,6 @@
-﻿namespace Poker.Data
+﻿namespace Poker.Enums
 {
-    public enum Value
+    public enum CardValue
     {
         Empty = 0,
         Two = 2,
