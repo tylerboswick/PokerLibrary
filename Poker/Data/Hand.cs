@@ -34,6 +34,11 @@ namespace Poker.Data
             };
         }
 
+        public Hand(Card[] cards)
+        {
+            Cards = cards;
+        }
+
         public override bool Equals(object obj)
         {
             var result = true;

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using Poker.Enums;
+using Poker.Helpers;
 
 namespace Poker.Data
 {
@@ -17,6 +19,22 @@ namespace Poker.Data
         {
             CardSuit = suit;
             CardValue = cardValue;
+        }
+
+        public Card(string cardInfo)
+        {
+            //0-9 and royals input length two (ie. 8H, AD)
+            if (cardInfo.Length == 2)
+            {
+                CardSuit = EnumHelpers.GetSuitFromChar(cardInfo.Last());
+                CardValue = EnumHelpers.GetValueFromChar(cardInfo.First());
+            }
+            //Else, input is 10 (ie. 10S)
+            else
+            {
+                CardSuit = EnumHelpers.GetSuitFromChar(cardInfo.Last());
+                CardValue = CardValue.Ten;
+            }
         }
 
         public override bool Equals(object c)
