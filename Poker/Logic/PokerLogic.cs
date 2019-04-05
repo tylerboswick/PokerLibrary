@@ -20,7 +20,7 @@ namespace Poker.Logic
         public PlayerHand GetWinnerFromHands(List<PlayerHand> playersWHands)
         {
             PlayerHand winner = null;
-
+            var highestPlayers = playersWHands.GroupBy(x => x.HandValue).OrderByDescending(y => y.Key).FirstOrDefault();
             return winner;
         }
      
