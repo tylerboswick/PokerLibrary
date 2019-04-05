@@ -5,24 +5,24 @@ namespace Poker.Data
     public class PlayerHand
     {
         public string Name { get; }
-        public Hand Cards { get; }
+        public Hand Hand { get; }
 
         public CardValue HighCard { get; set; }
         public HandValue HandValue { get; set; }
-        public PlayerHand(string name, Hand cards)
+        public PlayerHand(string name, Hand hand)
         {
             Name = name;
-            Cards = cards;
+            Hand = hand;
             EvaluatePlayerHand();
         }
 
         public void EvaluatePlayerHand()
         {
             //put in order for kickers
-            Cards.OrderHand();
+            Hand.OrderHand();
 
             //check if flush has value -> therefore flush
-            var flushValue = Cards.IsFlush();
+            var flushValue = Hand.IsFlush();
             if (flushValue != CardValue.Empty)
             {
                 HandValue = HandValue.Flush;
@@ -31,7 +31,7 @@ namespace Poker.Data
             }
 
             //check if 3 of kind has value -> therefore 3 of kind
-            var threeOfAKindValue = Cards.IsThreeOfAKind();
+            var threeOfAKindValue = Hand.IsThreeOfAKind();
             if (threeOfAKindValue != CardValue.Empty)
             {
                 HandValue = HandValue.ThreeOfKind;
@@ -40,7 +40,7 @@ namespace Poker.Data
             }
 
             //check if pair has value -> therefore pair
-            var pairValue = Cards.IsPair();
+            var pairValue = Hand.IsPair();
             if (pairValue != CardValue.Empty)
             {
                 HandValue = HandValue.OnePair;
@@ -49,7 +49,7 @@ namespace Poker.Data
             }
 
             //otherwise, set high card
-            var highCardValue = Cards.GetHighCardFromHand();
+            var highCardValue = Hand.GetHighCardFromHand();
             HandValue = HandValue.HighCard;
             HighCard = highCardValue.CardValue;
         }

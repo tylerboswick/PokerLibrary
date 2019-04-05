@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Poker.Data;
-using Poker.Enums;
 using Poker.Helpers;
 using Poker.Interfaces;
 
@@ -9,20 +8,28 @@ namespace Poker.Logic
 {
     public class PokerLogic : IPokerLogic
     {
-        public Hand GetHighHand(Hand firstHand, Hand secondHand)
-        {
-            var firstHandHigh = firstHand.GetHighCardFromHand();
-            var secondHandHigh = secondHand.GetHighCardFromHand();
-            var highCard = CardCompareHelpers.GetHighCard(firstHandHigh, secondHandHigh);
-
-            return highCard.Equals(firstHandHigh) ? firstHand : secondHand;
-        }
         public PlayerHand GetWinnerFromHands(List<PlayerHand> playersWHands)
         {
-            PlayerHand winner = null;
-            var highestPlayers = playersWHands.GroupBy(x => x.HandValue).OrderByDescending(y => y.Key).FirstOrDefault();
-            return winner;
+            var highValuePlayers = playersWHands.GroupBy(x => x.HandValue).OrderByDescending(y => y.Key).ToList();
+            
+            //key in grouping is value of hand
+            var highValue = highValuePlayers.First().Key;
+            var highPlayers = highValuePlayers.First().Select(x => x).ToList();
+
+            return highPlayers.Count() > 1 ? BreakTie(highPlayers) : highPlayers.First();;
         }
-     
+
+        //TODO: Need tests
+        public PlayerHand BreakTie(List<PlayerHand> highPlayers)
+        {
+            var highestPlayer = highPlayers.First();
+
+            foreach (var player in highPlayers)
+            {
+                highestPlayer = CardCompareHelpers.GetHighestHandFromPlayers(highestPlayer, player);
+            }
+
+            return highestPlayer;
+        }
     }
 }
