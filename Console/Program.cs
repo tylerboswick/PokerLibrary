@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Poker.Data;
 using Poker.Interfaces;
@@ -12,11 +13,20 @@ namespace Console
         private const string filePath = ".\\input.txt";
         public static void Main(string[] args)
         {
-            IPokerLogic poker = new PokerLogic();
-            var input = System.IO.File.ReadAllLines(filePath);
-            var winner = poker.GetWinnerFromHands(ParsePlayersFromInput(input));
-            System.Console.WriteLine(winner.Name + " is the winner with a " + winner.HandValue + ", " + winner.HighCard + " high.");
-            System.Console.ReadKey();
+            try
+            {
+                IPokerLogic poker = new PokerLogic();
+                var input = System.IO.File.ReadAllLines(filePath);
+                var winner = poker.GetWinnerFromHands(ParsePlayersFromInput(input));
+                System.Console.WriteLine(winner.Name + " is the winner with a " + winner.HandValue + ", " +
+                                         winner.HighCard + " high.");
+                System.Console.ReadKey();
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine($"Exception [{e.GetType()}] caught.");
+                System.Console.WriteLine(e.Message);
+            }
         }
 
         private static List<PlayerHand> ParsePlayersFromInput(IReadOnlyList<string> input)
