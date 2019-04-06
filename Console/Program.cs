@@ -21,8 +21,7 @@ namespace Console
 
                 if (winner != null)
                 {
-                    System.Console.WriteLine(winner.Name + " is the winner with a " + winner.HandValue + ", " +
-                                             winner.HighCard + " high.");
+                    System.Console.WriteLine($"{winner.Name} is the winner with a {winner.HandValue} ({winner.HighCard}).");
                 }
                 else
                 {

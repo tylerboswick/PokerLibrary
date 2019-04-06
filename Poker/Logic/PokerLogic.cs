@@ -10,10 +10,10 @@ namespace Poker.Logic
     {
         public PlayerHand GetWinnerFromHands(List<PlayerHand> playersWHands)
         {
+            //group all players with the same type (ie. all flushes or all pairs) - key in grouping is value of hand.
             var highValuePlayers = playersWHands.GroupBy(x => x.HandValue).OrderByDescending(y => y.Key).ToList();
-            
-            //key in grouping is value of hand
-            var highPlayers = highValuePlayers.First().Select(x => x).ToList();
+            //group all players of the same type by value of type (ie. Flush Ace high,  pair of nines).
+            var highPlayers = highValuePlayers.First().Select(x => x).GroupBy(x=>x.HighCard).OrderByDescending(y => y.Key).First().ToList();
             return highPlayers.Count() > 1 ? BreakTie(highPlayers) : highPlayers.First();;
         }
 
