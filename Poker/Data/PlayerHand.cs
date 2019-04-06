@@ -22,7 +22,7 @@ namespace Poker.Data
             Hand.OrderHand();
 
             //check if flush has value -> therefore flush
-            var flushValue = Hand.IsFlush();
+            var flushValue = Hand.HighValueFlush();
             if (flushValue != CardValue.Empty)
             {
                 HandValue = HandValue.Flush;
@@ -31,7 +31,7 @@ namespace Poker.Data
             }
 
             //check if 3 of kind has value -> therefore 3 of kind
-            var threeOfAKindValue = Hand.IsThreeOfAKind();
+            var threeOfAKindValue = Hand.HighValueThreeOfAKind();
             if (threeOfAKindValue != CardValue.Empty)
             {
                 HandValue = HandValue.ThreeOfKind;
@@ -40,7 +40,7 @@ namespace Poker.Data
             }
 
             //check if pair has value -> therefore pair
-            var pairValue = Hand.IsPair();
+            var pairValue = Hand.HighValuePair();
             if (pairValue != CardValue.Empty)
             {
                 HandValue = HandValue.OnePair;

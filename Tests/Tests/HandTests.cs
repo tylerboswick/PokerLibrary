@@ -16,9 +16,9 @@ namespace Tests.Tests
 
         [Theory]
         [ClassData(typeof(Test_FlushHandData))]
-        public void HandIsFlush_ReturnsExpected(Hand hand, bool expectedResult)
+        public void HighValueFlush_ReturnsExpected(Hand hand, CardValue expectedResult)
         {
-            Assert.True(hand.IsFlush().Equals(expectedResult));
+            Assert.Equal(expectedResult, hand.HighValueFlush());
         }
 
         [Theory]
@@ -34,7 +34,5 @@ namespace Tests.Tests
         {
             Assert.True(hand.GetValuableDuplicateCardsByValue(typeOfMultiple).Equals(expectedCardValue));
         }
-
-
     }
 }

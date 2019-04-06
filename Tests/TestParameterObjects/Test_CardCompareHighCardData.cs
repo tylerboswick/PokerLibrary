@@ -5,8 +5,8 @@ using Poker.Enums;
 
 namespace Tests.TestParameterObjects
 {
-    //Test Data Input for CardLogicTests.GetHighCard_HighCardIsReturned_WhenPassingTwoDifferentCardValues
-    public class Test_CardCompareData : IEnumerable<object[]>
+    //Test Data Input for CardCompareHelpers.GetHighCard_ExpectedIsReturned_WhenPassingTwoDifferentCardValues
+    public class Test_CardCompareHighCardData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {

@@ -9,7 +9,7 @@ namespace Console
 {
     public class Program
     {
-        //put file name here
+        //put filename/path here
         private const string filePath = ".\\input.txt";
         public static void Main(string[] args)
         {
@@ -18,8 +18,17 @@ namespace Console
                 IPokerLogic poker = new PokerLogic();
                 var input = System.IO.File.ReadAllLines(filePath);
                 var winner = poker.GetWinnerFromHands(ParsePlayersFromInput(input));
-                System.Console.WriteLine(winner.Name + " is the winner with a " + winner.HandValue + ", " +
-                                         winner.HighCard + " high.");
+
+                if (winner != null)
+                {
+                    System.Console.WriteLine(winner.Name + " is the winner with a " + winner.HandValue + ", " +
+                                             winner.HighCard + " high.");
+                }
+                else
+                {
+                    System.Console.WriteLine("Total stalemate of all 5 cards between two or more players.");
+                }
+
                 System.Console.ReadKey();
             }
             catch (Exception e)

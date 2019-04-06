@@ -10,7 +10,6 @@ namespace Poker.Helpers
             return firstCard.CardValue > secondCard.CardValue ? firstCard : secondCard;          
         }
 
-        //TODO: Need tests
         public static bool IsTie(Card firstCard, Card secondCard, out Card highCard)
         {
             var isTie = firstCard.CardValue.Equals(secondCard.CardValue);
@@ -18,7 +17,6 @@ namespace Poker.Helpers
             return isTie;
         }
 
-        //TODO: NEED TESTS
         public static PlayerHand GetHighestHandFromPlayers(PlayerHand firstPlayer, PlayerHand secondPlayer)
         {
             var firstPlayersCards = firstPlayer.Hand.Cards;

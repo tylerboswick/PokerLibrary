@@ -62,12 +62,12 @@ namespace Poker.Data
             return Cards.Contains(checkCard);
         }
 
-        public CardValue IsPair()
+        public CardValue HighValuePair()
         {
             return GetValuableDuplicateCardsByValue(Pair);
         }
 
-        public CardValue IsThreeOfAKind()
+        public CardValue HighValueThreeOfAKind()
         {
             return GetValuableDuplicateCardsByValue(ThreeOfAKind);
         }
@@ -77,8 +77,8 @@ namespace Poker.Data
             var result = CardValue.Empty;
             try
             {
-                //group common value cards and only take groups with the desired count (2 for pair, 3 for 3-of-kind)
-                var duplicates = Cards.GroupBy(card => card.CardValue).Where(cards => cards.Count() == numRequired).ToList();
+                //group common value cards and only take groups with the desired count (2 for pair, 3/4 for 3-of-kind)
+                var duplicates = Cards.GroupBy(card => card.CardValue).Where(cards => cards.Count() >= numRequired).ToList();
 
                 if (duplicates.Any())
                 {
@@ -98,7 +98,7 @@ namespace Poker.Data
             return result;
         }
 
-        public CardValue IsFlush()
+        public CardValue HighValueFlush()
         {
             CardValue result;
             try
